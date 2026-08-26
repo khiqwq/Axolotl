@@ -4,7 +4,7 @@ use std::{
     sync::Mutex,
 };
 use tauri::{
-    AppHandle, Listener, Manager, WebviewUrl, WebviewWindowBuilder,
+    Listener, Manager, WebviewUrl, WebviewWindowBuilder,
     menu::{
         CheckMenuItem, IsMenuItem, Menu, MenuItem, PredefinedMenuItem, Submenu,
     },
@@ -12,6 +12,8 @@ use tauri::{
     window::WindowBuilder,
 };
 use theseus::prelude::CommandPayload;
+
+type AppHandle = tauri::AppHandle<crate::AppRuntime>;
 
 const MAIN_WINDOW_LABEL: &str = "main";
 const LIGHTWEIGHT_HOST_WINDOW_LABEL: &str = "lightweight-host";
